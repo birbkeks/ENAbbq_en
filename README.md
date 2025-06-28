@@ -32,7 +32,7 @@ Enjoy the game!
 
 ## Installation
 ### Automatic (recommended)
-1. Download the installer from the [Releases] tab (https://github.com/birbkeks/ENAbbq_en/releases/).
+1. Download the installer from the [Releases](https://github.com/birbkeks/ENAbbq_en/releases/) tab.
 2. Run the installer and install the Russifier.
 **P.S. On Linux, you need to go to "Compatibility" in the game properties and select Proton!**
 
@@ -45,7 +45,7 @@ Enjoy the game!
 
 ### Hardpack
 **What is a hardpack?** A hardpack is a packed build of the entire game. It is needed if the migration of changes to a new game update is delayed. *Hardpacks are not recommended to be installed just like that. It is best to use them only in cases where the update of the Russifier is delayed*
-1. Go to the [Releases] tab (https://github.com/birbkeks/ENAbbq_en/releases/), follow the link to the TG channel with hardpacks and download the latest archive.
+1. Go to the [Releases](https://github.com/birbkeks/ENAbbq_en/releases/) tab, follow the link to the TG channel with hardpacks and download the latest archive.
 2. In Steam, click on the gear icon in the tab with ENA: Dream BBQ, go to "Management" and click on "View local files"
 3. Unzip the contents of the archive into the game folder.
 
