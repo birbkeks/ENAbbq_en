@@ -5,7 +5,7 @@ body:
   - type: textarea
     id: description
     validations:
-        required: true
+      required: true
     attributes:
-        label: "Description"
-        description: "Please describe your request in as much detail as possible"
+      label: "Description"
+      description: "Please describe your request in as much detail as possible"

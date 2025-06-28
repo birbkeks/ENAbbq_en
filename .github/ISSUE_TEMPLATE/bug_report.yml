@@ -5,25 +5,25 @@ body:
   - type: textarea
     id: description
     validations:
-        required: true
+      required: true
     attributes:
-        label: "Description"
-        description: "Please describe the problem in as much detail as possible"
+      label: "Description"
+      description: "Please describe the problem in as much detail as possible"
 
   - type: textarea
     id: reproduction
     attributes:
-        label: "Reproduction Steps"
-        description: "If acceptable, please provide steps to reproduce the problem"
-        placeholder: |
+      label: "Reproduction Steps"
+      description: "If acceptable, please provide steps to reproduce the problem"
+      placeholder: |
         1. Open the console interface
-        2. Click the "Start" button
+        2. Click the "Start" button"
         3. Get an error...
 
   - type: textarea
     id: screenshots
     attributes:
-        label: "Screenshots"
-        description: |
+      label: "Screenshots"
+      description: |
         If acceptable, please add screenshots to help explain your problem
         **Hint**: You can attach images by clicking on the area below to highlight it, then dragging and dropping files into it

@@ -5,24 +5,24 @@ body:
   - type: textarea
     id: description
     validations:
-        required: true
+      required: true
     attributes:
-        label: "Description"
-        description: "Please describe the issue in as much detail as possible"
+      label: "Description"
+      description: "Please describe the issue in as much detail as possible"
 
   - type: textarea
     id: dialogue
     attributes:
-        label: "Dialogue line"
-        description: "Write the line or lines that bother you"
-        placeholder: |
+      label: "Dialogue line"
+      description: "Write the line or lines that bother you"
+      placeholder: |
         The best resources are made from stress. Keep it up, Lantern Man.
         Why is Lantern Man here and not Spider Man?!
 
   - type: textarea
     id: screenshots
     attributes:
-        label: "Screenshots"
-        description: |
+      label: "Screenshots"
+      description: |
         If needed, please add screenshots to help explain your issue
         **Hint**: You can attach images by clicking on the area below to highlight it, then dragging and dropping files into it
