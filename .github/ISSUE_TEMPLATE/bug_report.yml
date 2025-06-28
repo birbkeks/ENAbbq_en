@@ -1,29 +1,29 @@
-name: "Сообщить о проблеме"
-description: "Если что-то работает не так, как ожидалось."
+name: "Report a Problem"
+description: "If something doesn't work as expected."
 labels: ["triage"]
 body:
   - type: textarea
     id: description
     validations:
-      required: true
+        required: true
     attributes:
-      label: "Описание"
-      description: "Опишите проблему как можно подробнее"
+        label: "Description"
+        description: "Please describe the problem in as much detail as possible"
 
   - type: textarea
     id: reproduction
     attributes:
-      label: "Шаги воспроизведения"
-      description: "Если приемлемо, опишите шаги для воспроизведения проблемы"
-      placeholder: |
-        1. Открыть интерфейс консоли
-        2. Нажать кнопку "Старт"
-        3. Получить ошибку...
+        label: "Reproduction Steps"
+        description: "If acceptable, please provide steps to reproduce the problem"
+        placeholder: |
+        1. Open the console interface
+        2. Click the "Start" button
+        3. Get an error...
 
   - type: textarea
     id: screenshots
     attributes:
-      label: "Скриншоты"
-      description: |
-        Если приемлемо, добавьте скриншоты, чтобы помочь объяснить вашу проблему
-        **Подсказка**: Вы можете прикрепить изображения щелкнув по области ниже, чтобы выделить её, а затем перетащив в нее файлы
+        label: "Screenshots"
+        description: |
+        If acceptable, please add screenshots to help explain your problem
+        **Hint**: You can attach images by clicking on the area below to highlight it, then dragging and dropping files into it

@@ -1,29 +1,28 @@
-name: "Сообщить о проблеме в переводе"
-description: "Если что-то переведено неправильно."
+name: "Report a translation issue"
+description: "If something is translated incorrectly."
 labels: ["triage"]
 body:
   - type: textarea
     id: description
     validations:
-      required: true
+        required: true
     attributes:
-      label: "Описание"
-      description: "Опишите проблему как можно подробнее"
+        label: "Description"
+        description: "Please describe the issue in as much detail as possible"
 
   - type: textarea
     id: dialogue
     attributes:
-      label: "Строка диалога"
-      description: "Напишите какая строка или какие строки вас беспокоят"
-      placeholder: |
-        Отборные ресурсы производятся благодаря стрессу. Так держать, Человек-Фонарь.
-        Почему тут Человек-Фонарь, а не Человек-Паук?!
+        label: "Dialogue line"
+        description: "Write the line or lines that bother you"
+        placeholder: |
+        The best resources are made from stress. Keep it up, Lantern Man.
+        Why is Lantern Man here and not Spider Man?!
 
   - type: textarea
     id: screenshots
     attributes:
-      label: "Скриншоты"
-      description: |
-        Если необходимо, добавьте скриншоты, чтобы помочь объяснить вашу проблему
-        **Подсказка**: Вы можете прикрепить изображения щелкнув по области ниже, чтобы выделить её, а затем перетащив в нее файлы
-
+        label: "Screenshots"
+        description: |
+        If needed, please add screenshots to help explain your issue
+        **Hint**: You can attach images by clicking on the area below to highlight it, then dragging and dropping files into it

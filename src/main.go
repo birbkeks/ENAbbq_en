@@ -20,10 +20,10 @@ import (
 func main() {
 	// Init app
 	a := app.New()
-	w := a.NewWindow("Установщик русификатора для ENA: Dream BBQ")
+	w := a.NewWindow("Russifier installer for ENA: Dream BBQ")
 	w.Resize(fyne.NewSize(800, 600))
 
-	mainLabel := widget.NewLabel("Пожалуйста подождите, идёт загрузка ресурсов установщика...")
+	mainLabel := widget.NewLabel("Please wait while we load installer resources...")
 	loadingWidget := widget.NewActivity()
 	loadingWidget.Start()
 
@@ -51,14 +51,14 @@ func main() {
 }
 
 func page0(w fyne.Window) *fyne.Container {
-	mainLabel := widget.NewLabel("Добро пожаловать в установщик русификатора для ENA: Dream BBQ")
+	mainLabel := widget.NewLabel("Welcome to the Russifier installer for ENA: Dream BBQ")
 
 	teamLabel := canvas.NewText("  by BARBEQUE TEAM", color.RGBA{169, 169, 169, 255})
 	teamLabel.TextSize = 12
 
 	errorLabel := canvas.NewText("", color.RGBA{255, 0, 0, 255})
 
-	btnContinue := widget.NewButton("Продолжить", func() {
+	btnContinue := widget.NewButton("Continue", func() {
 		w.SetContent(pageInstall(w))
 	})
 
@@ -78,10 +78,10 @@ func page0(w fyne.Window) *fyne.Container {
 }
 
 func pageERR(_ fyne.Window, err int) *fyne.Container {
-	errLabel := canvas.NewText("[FATL]: Произошла критическая ошибка при загрузке файлов.", color.RGBA{255, 0, 0, 255})
+	errLabel := canvas.NewText("[FATL]: A critical error occurred while loading files.", color.RGBA{255, 0, 0, 255})
 	errCode := canvas.NewText("[FATL]: Error "+fmt.Sprint(err), color.RGBA{255, 0, 0, 255})
 
-	buttonClose := widget.NewButtonWithIcon("Закрыть", theme.WindowCloseIcon(), func() {
+	buttonClose := widget.NewButtonWithIcon("Close", theme.WindowCloseIcon(), func() {
 		fyne.CurrentApp().Quit()
 	})
 
@@ -109,11 +109,11 @@ func pageInstall(w fyne.Window) *fyne.Container {
 		steamIcon, _ = fyne.LoadResourceFromPath(filepath.Join(appDir, "resources", "steamIcon.png"))
 	}
 
-	label := widget.NewLabel("Выберите путь до игры. Если она установлена по стандартному пути нажмите на кнопку Steam.")
+	label := widget.NewLabel("Select the path to the game. If it is installed in the standard path, click on the Steam button.")
 	labelPath := widget.NewLabel("")
 	errorLabel := canvas.NewText("", color.RGBA{255, 0, 0, 255})
 
-	btnContinue := widget.NewButtonWithIcon("Установить", theme.DownloadIcon(), func() {
+	btnContinue := widget.NewButtonWithIcon("Install", theme.DownloadIcon(), func() {
 		w.SetContent(pageEnd(path))
 	})
 	btnContinue.Disable()
@@ -129,16 +129,16 @@ func pageInstall(w fyne.Window) *fyne.Container {
 		// Check if there is executable game file
 		checkExecutable(path, btnContinue, errorLabel)
 		// Display chosen path
-		labelPath.SetText("Выбранный путь: " + path)
+		labelPath.SetText("The chosen path: " + path)
 	})
 
-	btnBrowse := widget.NewButtonWithIcon("Открыть", theme.SearchIcon(), func() {
+	btnBrowse := widget.NewButtonWithIcon("Open", theme.SearchIcon(), func() {
 		browseFile(w, func(selectedPath string) {
 			path = selectedPath
 			// Check if there is executable game file
 			checkExecutable(path, btnContinue, errorLabel)
 			// Display chosen path
-			labelPath.SetText("Выбранный путь: " + path)
+			labelPath.SetText("The chosen path: " + path)
 		})
 	})
 
@@ -161,7 +161,7 @@ func checkIntegrity(btnContinue *widget.Button, errorLabel *canvas.Text) {
 	resourcesPath := filepath.Join(appDir, "resources", "meta.json")
 	if _, err := os.Stat(resourcesPath); os.IsNotExist(err) {
 		btnContinue.Disable()
-		errorLabel.Text = "[FATL]: \"resources\" не найдено."
+		errorLabel.Text = "[FATL]: \"resources\" not found."
 		errorLabel.Refresh()
 	} else {
 		btnContinue.Enable()
@@ -174,7 +174,7 @@ func checkExecutable(selectedPath string, btnContinue *widget.Button, errorLabel
 	executablePath := filepath.Join(selectedPath, "ENA-4-DreamBBQ.exe")
 	if _, err := os.Stat(executablePath); os.IsNotExist(err) {
 		btnContinue.Disable()
-		errorLabel.Text = "[ERROR]: \"ENA-4-DreamBBQ.exe\" не найден, выберите папку с исполняемым файлом игры"
+		errorLabel.Text = "[ERROR]: \"ENA-4-DreamBBQ.exe\" not found, select the folder with the game executable file"
 		errorLabel.Refresh()
 	} else {
 		btnContinue.Enable()
@@ -203,10 +203,10 @@ func pageEnd(path string) *fyne.Container {
 	os.RemoveAll(filepath.Join(appDir, "resources"))
 
 	if err != nil {
-		errLabel := canvas.NewText("[FATL]: Произошла критическая ошибка при инъекции ассетов.", color.RGBA{255, 0, 0, 255})
+		errLabel := canvas.NewText("[FATL]: A critical error occurred while injecting assets.", color.RGBA{255, 0, 0, 255})
 		errCode := canvas.NewText("[FATL]: Error "+fmt.Sprint(err), color.RGBA{255, 0, 0, 255})
 
-		buttonClose := widget.NewButtonWithIcon("Закрыть", theme.WindowCloseIcon(), func() {
+		buttonClose := widget.NewButtonWithIcon("Close", theme.WindowCloseIcon(), func() {
 			fyne.CurrentApp().Quit()
 		})
 
@@ -219,8 +219,8 @@ func pageEnd(path string) *fyne.Container {
 		)
 		return pageEndContainer
 	} else {
-		label := widget.NewLabel("Спасибо за установку")
-		buttonClose := widget.NewButtonWithIcon("Закрыть", theme.WindowCloseIcon(), func() {
+		label := widget.NewLabel("Thank you for installing")
+		buttonClose := widget.NewButtonWithIcon("Close", theme.WindowCloseIcon(), func() {
 			fyne.CurrentApp().Quit()
 		})
 

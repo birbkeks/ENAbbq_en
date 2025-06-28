@@ -1,11 +1,11 @@
-name: "Запрос на добавление"
-description: "Если у вас есть хорошая идея."
+name: "Add Request"
+description: "If you have a good idea."
 labels: ["triage"]
 body:
   - type: textarea
     id: description
     validations:
-      required: true
+        required: true
     attributes:
-      label: "Описание"
-      description: "Опишите запрос как можно подробнее"
+        label: "Description"
+        description: "Please describe your request in as much detail as possible"

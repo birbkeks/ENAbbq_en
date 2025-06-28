@@ -5,26 +5,26 @@ OUTPUT_LINUX=./bin/Installer-Linux
 THEME=dark
 
 windows:
-	@echo "Сборка проекта для Windows..."
+	@echo "Building a project for Windows..."
 	@CGO_ENABLED=$(CGO_ENABLED) CC=$(CC) GOOS=windows GOARCH=amd64 go build -ldflags="-s -w -H=windowsgui" -o $(OUTPUT_WINDOWS) ./src/*.go
 
 linux:
-	@echo "Сборка проекта для Linux..."
+	@echo "Building a project for Linux..."
 	@GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o $(OUTPUT_LINUX) ./src/*.go
 
 all:
-	@echo "Сборка проекта для Windows..."
+	@echo "Building a project for Windows..."
 	@CGO_ENABLED=$(CGO_ENABLED) CC=$(CC) GOOS=windows GOARCH=amd64 go build -ldflags="-s -w -H=windowsgui" -o $(OUTPUT_WINDOWS) ./src/*.go
-	@echo "Сборка проекта для Linux..."
+	@echo "Building a project for Linux..."
 	@GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o $(OUTPUT_LINUX) ./src/*.go
 
 clean:
-	@echo "Очистка..."
+	@echo "Cleaning..."
 	@rm -f $(OUTPUT_WINDOWS) $(OUTPUT_LINUX)
 
 help:
-	@echo "Используйте 'make windows' для сборки Windows версии."
-	@echo "Используйте 'make linux' для сборки Linux версии."
-	@echo "Используйте 'make clean' для очистки."
+	@echo "Use 'make windows' to build the Windows version."
+	@echo "Use 'make linux' to build the Linux version."
+	@echo "Use 'make clean' to clean."
 
 .PHONY: all windows linux clean help
